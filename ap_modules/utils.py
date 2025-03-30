@@ -1,5 +1,5 @@
 """
-The goal of this file is to add some methods from requests and base64 libs to Server Script NameSpaces
+The goal of this file is to add some methods from requests, base64, and hashlib libs to Server Script NameSpaces
 """
 
 import frappe
