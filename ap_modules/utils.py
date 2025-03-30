@@ -70,7 +70,6 @@ def safe_exec(
 
     # build globals
     exec_globals = get_safe_globals()
-    print("DEBUGX", exec_globals)
     if _globals:
         exec_globals.update(_globals)
 
