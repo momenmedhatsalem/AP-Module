@@ -95,11 +95,11 @@ def safe_exec(
     return exec_globals, _locals
 
 
-def encode(data):
+def encode_base64(data):
     return base64.b64encode(data.encode()).decode()
 
 
-def decode(data):
+def decode_base64(data):
     return base64.b64decode(data).decode()
 
 
@@ -194,8 +194,8 @@ def get_safe_globals():
             ),
 
             # The necessary methods to be added to the NameSpace
-            encode=encode,
-            decode=decode,
+            encode_base64=encode_base64,
+            decode_base64=decode_base64,
             requests_get=requests_get,
             post=requests_post,
             put=requests_put,
