@@ -11,6 +11,7 @@ import mimetypes
 import inspect
 import base64
 import requests
+import hashlib
 
 from frappe.utils.safe_exec import (
     get_safe_globals,
@@ -119,6 +120,9 @@ def requests_session():
     return requests.Session()
 
 
+def hash_sha256(data: str) -> str:
+    return hashlib.sha256(data.encode()).hexdigest()
+
 def get_safe_globals():
     datautils = frappe._dict()
 
@@ -200,6 +204,7 @@ def get_safe_globals():
             post=requests_post,
             put=requests_put,
             requests_session=requests_session,
+            hash_sha256=hash_sha256,
 
 
             make_get_request=frappe.integrations.utils.make_get_request,
